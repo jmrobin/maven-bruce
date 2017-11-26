@@ -22,7 +22,12 @@
 			<url>http://localhost:8081/artifactory/libs-snapshot-local</url>
 		</snapshotRepository>
 	</distributionManagement>
-
+	
+	<scm>
+		<connection>scm:git:git@github.com:jmrobin/maven-bruce.git</connection>
+		<developerConnection>scm:git:git@github.com:jmrobin/maven-bruce.git</developerConnection>
+		<url>git@github.com:jmrobin/maven-bruce.git</url>
+	</scm>
 
 	<modules>
 		<module>academy-utils</module>
@@ -92,9 +97,19 @@
 						</dependency>
 					</dependencies>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.3</version>
+					<configuration>
+						<tagNameFormat>v@{project.version}</tagNameFormat>
+						<autoVersionSubmodules>true</autoVersionSubmodules>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
+	
 	<reporting>
 		<plugins>
 			<plugin>
