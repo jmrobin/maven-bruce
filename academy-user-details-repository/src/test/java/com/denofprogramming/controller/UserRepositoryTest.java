@@ -28,8 +28,8 @@ public class UserRepositoryTest {
 		final User domain = new User();
 		final User returnUser = userRepository.read(domain);
 		assertNotNull("returnUser should not be null", returnUser);
-		Assert.assertTrue("user name is not correct", returnUser.getName().equals("Jim Sparrow"));
-		Assert.assertTrue("user age is not correct", returnUser.getAge() == 31);
+		Assert.assertTrue("user name is not correct", returnUser.getName().equals("Jim Sparrow II"));
+		Assert.assertTrue("user age is not correct", returnUser.getAge() == 32);
 	}
 	
 }
